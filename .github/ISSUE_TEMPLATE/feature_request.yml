@@ -1,0 +1,60 @@
+name: Feature request
+description: Suggest a safe improvement for MacTrafficLights.
+title: "[Feature]: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome if they fit the project's safety boundary.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem would this feature solve?
+      placeholder: "Example: The overlay is hard to align on apps with custom title bars."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the feature you want.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: If you tried another workaround, describe it here.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Feature area
+      options:
+        - Overlay rendering
+        - App compatibility
+        - Performance
+        - Tray menu / settings
+        - Build / packaging
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety-check
+    attributes:
+      label: Safety check
+      options:
+        - label: This request can be implemented without patching Windows system files.
+          required: true
+        - label: This request can be implemented without DLL injection into other apps.
+          required: true
+

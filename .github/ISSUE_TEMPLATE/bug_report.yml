@@ -1,0 +1,88 @@
+name: Bug report
+description: Report a reproducible MacTrafficLights bug.
+title: "[Bug]: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail for someone else to reproduce it.
+
+  - type: input
+    id: version
+    attributes:
+      label: MacTrafficLights version
+      placeholder: "v4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 23H2 / 24H2"
+    validations:
+      required: true
+
+  - type: input
+    id: app
+    attributes:
+      label: Target app
+      description: Which app/window had the issue?
+      placeholder: "Explorer, Brave, Edge, Spotify, Discord, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start MacTrafficLights
+        2. Open ...
+        3. Drag/hover/maximize ...
+        4. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: "What should have happened?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: "What happened instead?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: renderer-status
+    attributes:
+      label: Renderer Status
+      description: If possible, paste the text from tray menu -> Renderer Status.
+      placeholder: "Target, Caption area, Input shield, DWM composition, visible traffic lights..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or screen recording
+      description: Drag screenshots here if the issue is visual.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety-check
+    attributes:
+      label: Safety check
+      options:
+        - label: I am not asking for System32 patching, uxtheme patching, DWM replacement, Explorer replacement, or DLL injection.
+          required: true
+

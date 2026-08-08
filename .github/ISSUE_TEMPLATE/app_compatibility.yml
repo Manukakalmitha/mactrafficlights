@@ -1,0 +1,77 @@
+name: App compatibility report
+description: Report a visual or behavior issue with a specific app.
+title: "[Compatibility]: "
+labels: ["app compatibility", "needs triage"]
+body:
+  - type: input
+    id: app-name
+    attributes:
+      label: App name
+      placeholder: "Spotify, Discord, Brave, Edge, Explorer, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      placeholder: "If known"
+    validations:
+      required: false
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 23H2 / 24H2"
+    validations:
+      required: true
+
+  - type: input
+    id: mtl-version
+    attributes:
+      label: MacTrafficLights version
+      placeholder: "v4.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      options:
+        - Overlay background color mismatch
+        - Buttons overlap app UI
+        - Buttons are misaligned
+        - Buttons disappear
+        - Buttons lag while dragging
+        - Native Windows controls become visible
+        - Click action does not work
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: "Explain what happens in this app."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag screenshots here. Full-window screenshots are useful for title bar/layout issues.
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Did micro-mask mode, alignment, or exclusion help?
+    validations:
+      required: false
+
